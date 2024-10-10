@@ -10,7 +10,7 @@ const SignUpPage = () => {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
-  const { signup } = useAuthStore();
+  const { signup, isSignup } = useAuthStore();
   const handleSingup = (e) => {
     e.preventDefault();
     signup({ email, username, password });
@@ -90,8 +90,12 @@ const SignUpPage = () => {
           </form>
           <div className="text-center text-gray-400">
             Already a member?{" "}
-            <Link to="/login" className="text-red-500 hover:underline">
-              Sign in
+            <Link
+              to="/login"
+              aria-disabled={isSignup}
+              className="text-red-500 hover:underline"
+            >
+              {isSignup ? "Loading..." : "Sign in"}
             </Link>
           </div>
         </div>
