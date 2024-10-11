@@ -10,9 +10,10 @@ import tvRoutes from "./routes/tv.route.js"
 import searchRoute from './routes/search.route.js';
 import cors from 'cors'
 import path from 'path'
+const client = ENV_VARS.CLIENT_URL || 'http://localhost:5173'
 app.use(cors({ origin: ENV_VARS.CLIENT_URL, credentials: true }));
 
-const PORT = ENV_VARS.PORT;
+const PORT = ENV_VARS.PORT || 5000;
 
 const __dirname = path.resolve()
 app.use(express.json()) // will allow us to parse req.body
