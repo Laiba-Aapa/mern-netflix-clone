@@ -24,7 +24,7 @@
     "env": {
         "MONGO_URI": "mongodb+srv://laibaeawan:W8jLZGIWSDd1yMih@cluster0.ddlzn.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0",
         "JWT_SECRET": "0cc8217b4ebf47499275ced41de5c96537f79776ae27c3187525baf43d332531",
-        "PORT": 5000,
+        "PORT": "5000",
         "TMDB_API_KEY": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyZjkyOWExNWZjODE5NzRkODRlZTljMDI3MWQ5MTBjYiIsIm5iZiI6MTcyNzk4NjM4OC44NTk3NDgsInN1YiI6IjY2ZmVmOWFjZTg0ZWViMzVhMGY3ZWQxYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qM0afKnw48iwtXzoI7rq3PNZDYIinjlE7-flJHAnHDk",
         "CLIENT_URL": "http: //localhost:5173"
     }
