@@ -11,7 +11,8 @@ import searchRoute from './routes/search.route.js';
 import cors from 'cors'
 import path from 'path'
 const client = ENV_VARS.CLIENT_URL || 'http://localhost:5173'
-app.use(cors({ origin: ENV_VARS.CLIENT_URL, credentials: true }));
+// const client = 'http://localhost:5173'
+app.use(cors({ origin: client, credentials: true }));
 
 const PORT = ENV_VARS.PORT || 5000;
 

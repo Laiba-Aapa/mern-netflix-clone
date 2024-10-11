@@ -84,18 +84,17 @@ const SignUpPage = () => {
               />
             </div>
 
-            <button className="w-full py-2 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700">
-              Sign Up
+            <button
+              className="w-full py-2 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700"
+              aria-disabled={isSignup}
+            >
+              {isSignup ? "Loading..." : "Sign in"}
             </button>
           </form>
           <div className="text-center text-gray-400">
             Already a member?{" "}
-            <Link
-              to="/login"
-              aria-disabled={isSignup}
-              className="text-red-500 hover:underline"
-            >
-              {isSignup ? "Loading..." : "Sign in"}
+            <Link to="/login" className="text-red-500 hover:underline">
+              Sign Up
             </Link>
           </div>
         </div>
