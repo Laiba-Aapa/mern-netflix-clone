@@ -10,16 +10,24 @@ export const useAuthStore = create((set) => ({
   isLogin: false,
   signup: async (creds) => {
     set({ isSignup: true });
+    set({ isSignup: true }); // Optionally set loading state here
+
     try {
       const response = await apiRequest.post("/auth/signup", creds, {
         headers: { "Content-Type": "application/json" },
       });
 
+      // Assuming 'user' is returned in the response
       set({ user: response.data.user, isSignup: false });
       toast.success("Account created successfully!");
     } catch (error) {
-      console.log(error);
-      toast.error(error.response.data.message || "Signup failed");
+      console.error("Signup error:", error); // Log the error for debugging
+
+      // Check if error.response exists before accessing its properties
+      const errorMessage = error.response?.data?.message || "Signup failed";
+      toast.error(errorMessage);
+
+      // Reset state in case of error
       set({ isSignup: false, user: null });
     }
   },

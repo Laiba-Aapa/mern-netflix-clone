@@ -14,7 +14,8 @@ import path from 'path'
 // const client = 'http://localhost:5173'
 
 app.use(cors({
-    origin: 'https://laiba-netflix-clone.vercel.app', // replace with your actual frontend URL
+    // origin: "http://localhost:5173",
+    origin: 'https://laiba-netflix-clone.vercel.app',
     methods: ['GET', 'POST', 'OPTIONS'],
     credentials: true, // allow credentials if you're sending cookies
 }));
