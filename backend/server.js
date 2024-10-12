@@ -8,11 +8,16 @@ import authRoutes from "./routes/auth.route.js"
 import movieRoutes from "./routes/movie.route.js"
 import tvRoutes from "./routes/tv.route.js"
 import searchRoute from './routes/search.route.js';
-import cors from 'cors'
+import cors from 'cors';
 import path from 'path'
-const client = ENV_VARS.CLIENT_URL || 'http://localhost:5173'
+// const client = ENV_VARS.CLIENT_URL || 'http://localhost:5173'
 // const client = 'http://localhost:5173'
-app.use(cors({ origin: client, credentials: true }));
+
+app.use(cors({
+    origin: 'https://laiba-netflix-clone.vercel.app', // replace with your actual frontend URL
+    methods: ['GET', 'POST', 'OPTIONS'],
+    credentials: true, // allow credentials if you're sending cookies
+}));
 
 const PORT = ENV_VARS.PORT || 5000;
 
