@@ -33,6 +33,9 @@ const PORT = ENV_VARS.PORT || 5000;
 const __dirname = path.resolve()
 app.use(express.json()) // will allow us to parse req.body
 app.use(cookieParser())// will allow us to parse cookie token in middleware in requests.
+app.get('/test', (req, res) => {
+    res.send('Test route working!');
+});
 app.use('/api/v1/auth', authRoutes)
 app.use('/api/v1/movie', protectedRoute, movieRoutes)
 app.use('/api/v1/tv', protectedRoute, tvRoutes)
