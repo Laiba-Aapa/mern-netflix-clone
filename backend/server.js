@@ -13,17 +13,17 @@ import path from 'path'
 // const client = ENV_VARS.CLIENT_URL || 'http://localhost:5173'
 // const client = 'http://localhost:5173'
 
-// app.use(cors({
-//     // origin: 'https://laiba-netflix-clone.vercel.app',
-//     methods: ['GET', 'POST', 'OPTIONS'],
-//     credentials: true, // allow credentials if you're sending cookies
-// }));
-
 app.use(cors({
-    origin: "*",  // For testing, but will need to specify later
+    origin: ['https://laiba-netflix-clone.vercel.app'],
     methods: ['GET', 'POST', 'OPTIONS'],
-    credentials: false,  // Temporarily disable credentials
+    credentials: true, // allow credentials if you're sending cookies
 }));
+
+// app.use(cors({
+//     origin: "*",  // For testing, but will need to specify later
+//     methods: ['GET', 'POST', 'OPTIONS'],
+//     credentials: false,  // Temporarily disable credentials
+// }));
 
 // Handle preflight requests
 app.options('*', cors());
