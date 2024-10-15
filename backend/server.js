@@ -20,10 +20,13 @@ import path from 'path'
 // }));
 
 app.use(cors({
-    origin: "*",
+    origin: 'https://laiba-netflix-clone.vercel.app',  // Specify your frontend URL
     methods: ['GET', 'POST', 'OPTIONS'],
-    credentials: false,  // Temporarily disable
+    credentials: false,  // Keep this disabled for now
 }));
+
+// Handle preflight requests
+app.options('*', cors());
 
 const PORT = ENV_VARS.PORT || 5000;
 
